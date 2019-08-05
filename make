@@ -1,3 +1,3 @@
 #!/bin/bash
 
-g++ main.cpp -lncurses -std=c++1y -Wall -Weffc++ -Winit-self && ./a.out
+g++ main.cpp -std=c++17 -Wall -Weffc++ -Winit-self && ./a.out
