@@ -173,7 +173,7 @@ bool Pointer<T, size>::collect()
                 delete p->memPtr;
             }
             ret = true;
-            refContainer.erase(p);
+            p = refContainer.erase(p);
         }
             
     return ret;
@@ -188,10 +188,9 @@ T *Pointer<T, size>::operator=(T *t)
     // LAB: Smart Pointer Project Lab
     std::cout << "operator= *T called" << std::endl;
     
-    if(addPtr(t)){
-        return t;
-    }
-    return nullptr;
+    addPtr(t);
+
+    return this->addr;
 }
 // Overload assignment of Pointer to Pointer.
 template <class T, int size>
@@ -243,6 +242,9 @@ bool Pointer<T, size>::addPtr(T *ptr)
     if (size > 0){
         isArray = true;
         arraySize = size;
+    } else {
+        isArray = false;
+        arraySize = 0;
     }
         
     typename std::list<PtrDetails<T>>::iterator p;
