@@ -1,5 +1,6 @@
 #include "gc_pointer.h"
 #include "LeakTester.h"
+#include <assert.h>
 
 void TestPointerConstructorStoresPointerAndPointerCanBeRetrieved(){
     Pointer<int> p = new int(2);
