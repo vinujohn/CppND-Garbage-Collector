@@ -1,3 +1,3 @@
 #!/bin/bash
 
-g++ main.cpp -std=c++17 -Wall -Weffc++ -Winit-self && ./a.out
+g++ main.cpp -std=c++17 -Wall -Winit-self && ./a.out
